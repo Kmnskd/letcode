@@ -101,6 +101,16 @@ class Solution:
                 jiemistr += i
         print(jiemistr)
 
+    def max_sub_array(self, nums):
+        """
+        给定一个整数数组，找出总和最大的连续数列，并返回总和。
+        输入： [-2,1,-3,4,-1,2,1,-5,4]
+        输出： 6
+        解释： 连续子数组 [4,-1,2,1] 的和最大，为 6。
+        """
+
+
+
 
 so = Solution()
 # so.removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
