@@ -1,4 +1,31 @@
 class Solution:
+    def zhong_wei_shu(self, nums):
+        for i in range(0, len(nums)-1):
+            for j in range(0, len(nums)-1-i):
+                if nums[j] > nums[j+1]:
+                    nums[j], nums[j+1] = nums[j+1], nums[j]
+
+        print(nums)
+        new_nums = nums
+        print(len(new_nums))
+        length = len(new_nums)
+        index = length % 2
+        print(index)
+        if index != 0:
+            return new_nums[int((length/2) - 0.5)]
+        return (new_nums[int(length/2) - 1] + new_nums[int(length/2)]) / 2
+
+    def zhong_shu(self, nums):
+        count = {}
+        for i in nums:
+            if i in count:
+                count[i] += 1
+            else:
+                count[i] = 1
+
+        res = {v: k for k, v in count.items()}[max(count.values())]
+        return res
+
     def removeDuplicates(self, nums) -> int:
         """
             给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
@@ -109,6 +136,9 @@ class Solution:
         解释： 连续子数组 [4,-1,2,1] 的和最大，为 6。
         """
 
+        pass
+
+
 
 
 
@@ -118,3 +148,5 @@ so = Solution()
 # so.reverseString1(["h","e","l","l","o"])
 # so.rotate([1, 2, 3, 4, 5, 6, 7], 3)
 so.encrypt("dfdsafdsgz", "BCDEFGH")
+print(so.zhong_wei_shu([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
+print(so.zhong_wei_shu([5, 8, 6, 2, 1]))
